@@ -13,7 +13,7 @@ public class CardController {
     @GetMapping("/cards")
     public String  getPerson(@RequestParam(required = true) String documentType, String documentNumber){
 
-        return "Estoy retornando una tarjeta";
+        return "Estoy retornando una tarjeta a";
 
     }
 }
