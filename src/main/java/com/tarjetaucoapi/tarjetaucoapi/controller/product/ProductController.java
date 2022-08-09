@@ -10,7 +10,7 @@ public class ProductController {
     @GetMapping("/products")
     public String  getPerson(@RequestParam(required = true) String documentType, String documentNumber){
 
-        return "Estoy retornando un inventario";
+        return "Estoy retornando un producto";
 
     }
 }
