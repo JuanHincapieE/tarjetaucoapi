@@ -13,7 +13,7 @@ public class StoreController {
     @GetMapping("/stores")
     public String  getStore(@RequestParam(required = true) String documentType, String documentNumber){
 
-        return "Estoy retornando la tiendaa" + documentNumber ;
+        return "Estoy retornando la tiendaa" + documentNumber;
 
     }
 }
