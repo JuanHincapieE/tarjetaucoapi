@@ -1,9 +1,6 @@
 package com.tarjetaucoapi.tarjetaucoapi.controller.persons;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -13,12 +10,17 @@ import java.util.Map;
 
 public class PersonController {
 
+    // REVISAR Y ARREGLAR LOS REQUESTPARAM DE CADA CLASE.
     @GetMapping("/persons")
-    public String  getPerson(@RequestParam(required = true) String documentType, String documentNumber){
+    public String  getPerson(@RequestParam(required = true) String documentType, String documentNumber, String name,
+                                String lastName, String email ){
 
         return "Estoy retornando una persona";
-
     }
-
+    @PostMapping("/persons")
+    public String postPerson(@RequestParam(required = true) String documentType, String documentNumber, String name,
+                             String lastName, String email) {
+        return "Estoy creando una persona";
+    }
 
 }
