@@ -20,6 +20,6 @@ public class CardController {
     public String postcard(@RequestParam(required = true) int CardNumber, String UserName,
                              String UserLastName, int CVV, int Expiration){
 
-        return "estoy creando una tarjeta";
+        return "estoy creando una tarjeta a";
     }
 }
