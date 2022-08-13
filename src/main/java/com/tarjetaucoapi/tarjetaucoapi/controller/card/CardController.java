@@ -1,19 +1,24 @@
 package com.tarjetaucoapi.tarjetaucoapi.controller.card;
 
 
+import com.tarjetaucoapi.tarjetaucoapi.core.card.model.CardModel;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.Random;
 
 @RestController
 @RequestMapping("/api/v1/rest")
 
 public class CardController {
 
-    //, USERNAME, USERLASTNAME, CVV, EXPIRATION
+    //, CardNumber, USERNAME, USERLASTNAME, CVV, EXPIRATION
     @GetMapping("/cards")
-    public String  getcard(@RequestParam(required = true) int CardNumber, String UserName,
-                             String UserLastName, int CVV, int Expiration){
+    public CardModel getcard() {
+        Random random = new Random();
 
-        return "Estoy retornando una tarjeta";
+        CardModel cardModel = new CardModel(random.nextInt(13),"Julio");
+
+        return cardModel;
 
     }
     @PostMapping("/cards")
