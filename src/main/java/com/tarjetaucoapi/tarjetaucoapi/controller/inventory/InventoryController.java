@@ -1,6 +1,7 @@
 package com.tarjetaucoapi.tarjetaucoapi.controller.inventory;
 
 
+import com.tarjetaucoapi.tarjetaucoapi.core.inventory.model.InventoryModel;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -9,12 +10,13 @@ import org.springframework.web.bind.annotation.*;
 public class InventoryController {
 
     @GetMapping("/inventories")
-    public String  getPerson(@RequestParam(required = true) String idProduct, String productName, String productType, String idStore, String storeName) {
-        return "Estoy retornando un inventario";
+    public InventoryModel getInventory() {
+        InventoryModel inventoryModel = new InventoryModel(1, "tienda colegio");
+        return inventoryModel;
     }
 
     @PostMapping("/inventories")
-    public String  pstPerson(@RequestParam(required = true) String idProduct, String productName, String productType, String idStore, String storeName){
+    public String  postInventory(@RequestParam(required = true) String idProduct, String productName, String productType, String idStore, String storeName){
         return "Estoy creando un inventario";
     }
 }
