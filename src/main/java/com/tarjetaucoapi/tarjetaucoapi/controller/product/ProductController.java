@@ -1,14 +1,19 @@
 package com.tarjetaucoapi.tarjetaucoapi.controller.product;
 
 import org.springframework.web.bind.annotation.*;
+import com.tarjetaucoapi.tarjetaucoapi.core.product.model.ProductModel;
 
 @RestController
 @RequestMapping("/api/v1/rest")
 public class ProductController {
     @GetMapping("/products")
-    public String  getPerson(@RequestParam(required = true) int idProducto, String nombreProducto){
-
-        return "Estoy retornando un producto";
+    public ProductModel productModel() {
+        ProductModel productModel= new ProductModel(1,"Agua",1500,"Botella de agua 100 ml");
+        return productModel;
     }
-    //POST | PUT | DELETE
+
+    @PostMapping("/products")
+    public String  postProduct(@RequestParam(required = true) String idProduct, String productName,long productPrice, String description){
+        return "Estoy creando un producto";
+    }
 }
