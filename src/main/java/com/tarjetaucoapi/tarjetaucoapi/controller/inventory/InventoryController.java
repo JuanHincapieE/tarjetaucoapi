@@ -2,6 +2,7 @@ package com.tarjetaucoapi.tarjetaucoapi.controller.inventory;
 
 
 import com.tarjetaucoapi.tarjetaucoapi.core.inventory.model.InventoryModel;
+import com.tarjetaucoapi.tarjetaucoapi.core.product.model.ProductModel;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -11,8 +12,7 @@ public class InventoryController {
 
     @GetMapping("/inventories")
     public InventoryModel getInventory() {
-        InventoryModel inventoryModel = new InventoryModel(1, "tienda colegio");
-        return inventoryModel;
+        return new InventoryModel(1, 15, new ProductModel(123, "Papitas", 3000, "Son unas papitas"));
     }
 
     @PostMapping("/inventories")

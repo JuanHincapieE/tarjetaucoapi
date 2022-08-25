@@ -1,4 +1,4 @@
-package com.tarjetaucoapi.tarjetaucoapi.core.card.model;
+package com.tarjetaucoapi.tarjetaucoapi.controller.inventory.model;
 
 public class CardModel {
 

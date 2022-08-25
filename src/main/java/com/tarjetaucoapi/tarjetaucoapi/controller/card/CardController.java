@@ -1,7 +1,7 @@
 package com.tarjetaucoapi.tarjetaucoapi.controller.card;
 
 
-import com.tarjetaucoapi.tarjetaucoapi.core.card.model.CardModel;
+import com.tarjetaucoapi.tarjetaucoapi.controller.inventory.model.CardModel;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Random;
