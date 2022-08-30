@@ -1,4 +1,4 @@
-package com.tarjetaucoapi.tarjetaucoapi.domains.product.model;
+package com.tarjetaucoapi.tarjetaucoapi.domains.product;
 
 public class Product {
 

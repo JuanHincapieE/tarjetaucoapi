@@ -1,4 +1,4 @@
-package com.tarjetaucoapi.tarjetaucoapi.domains.store.model;
+package com.tarjetaucoapi.tarjetaucoapi.domains.store;
 
 public class Store {
     private int id;

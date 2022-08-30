@@ -1,7 +1,7 @@
 package com.tarjetaucoapi.tarjetaucoapi.controllers.product;
 
 import org.springframework.web.bind.annotation.*;
-import com.tarjetaucoapi.tarjetaucoapi.domains.product.model.Product;
+import com.tarjetaucoapi.tarjetaucoapi.domains.product.Product;
 
 @RestController
 @RequestMapping("/api/v1/rest")

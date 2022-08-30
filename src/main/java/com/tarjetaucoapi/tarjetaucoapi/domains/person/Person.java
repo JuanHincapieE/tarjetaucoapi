@@ -1,6 +1,4 @@
-package com.tarjetaucoapi.tarjetaucoapi.domains.person.model;
-
-import com.tarjetaucoapi.tarjetaucoapi.domains.card.model.Card;
+package com.tarjetaucoapi.tarjetaucoapi.domains.person;
 
 import javax.persistence.*;
 

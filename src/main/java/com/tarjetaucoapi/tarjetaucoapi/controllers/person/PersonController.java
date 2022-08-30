@@ -1,6 +1,5 @@
 package com.tarjetaucoapi.tarjetaucoapi.controllers.person;
 
-import com.tarjetaucoapi.tarjetaucoapi.domains.person.model.Person;
 import org.springframework.web.bind.annotation.*;
 
 @RestController

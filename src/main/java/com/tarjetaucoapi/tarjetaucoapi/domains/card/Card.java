@@ -1,4 +1,4 @@
-package com.tarjetaucoapi.tarjetaucoapi.domains.card.model;
+package com.tarjetaucoapi.tarjetaucoapi.domains.card;
 
 public class Card {
 

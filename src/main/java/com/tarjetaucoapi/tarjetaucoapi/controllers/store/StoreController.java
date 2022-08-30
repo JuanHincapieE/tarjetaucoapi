@@ -1,6 +1,6 @@
 package com.tarjetaucoapi.tarjetaucoapi.controllers.store;
 
-import com.tarjetaucoapi.tarjetaucoapi.domains.store.model.Store;
+import com.tarjetaucoapi.tarjetaucoapi.domains.store.Store;
 import org.springframework.web.bind.annotation.*;
 
 @RestController

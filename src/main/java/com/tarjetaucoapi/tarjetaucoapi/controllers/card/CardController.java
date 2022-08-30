@@ -1,7 +1,7 @@
 package com.tarjetaucoapi.tarjetaucoapi.controllers.card;
 
 
-import com.tarjetaucoapi.tarjetaucoapi.controllers.inventory.model.CardModel;
+import com.tarjetaucoapi.tarjetaucoapi.domains.card.Card;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Random;
@@ -13,10 +13,10 @@ public class CardController {
 
     //, CardNumber, USERNAME, USERLASTNAME, CVV, EXPIRATION
     @GetMapping("/cards")
-    public CardModel getcard() {
+    public Card getcard() {
         Random random = new Random();
 
-        CardModel cardModel = new CardModel(random.nextInt(13),"Julio");
+        Card cardModel = new Card(random.nextInt(13),"Julio");
 
         return cardModel;
 
