@@ -1,7 +1,6 @@
-package com.tarjetaucoapi.tarjetaucoapi.controller.store;
+package com.tarjetaucoapi.tarjetaucoapi.controllers.store;
 
-import com.tarjetaucoapi.tarjetaucoapi.core.product.model.ProductModel;
-import com.tarjetaucoapi.tarjetaucoapi.core.store.model.StoreModel;
+import com.tarjetaucoapi.tarjetaucoapi.domains.store.model.Store;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -10,8 +9,8 @@ import org.springframework.web.bind.annotation.*;
 public class StoreController {
 
     @GetMapping("/stores")
-    public StoreModel storeModel() {
-        StoreModel storeModel= new StoreModel(1,"Botarochitas","Tus platanitos al mejor precio");
+    public Store storeModel() {
+        Store storeModel= new Store(1,"Botarochitas","Tus platanitos al mejor precio");
         return storeModel;
     }
 

@@ -1,14 +1,14 @@
-package com.tarjetaucoapi.tarjetaucoapi.controller.product;
+package com.tarjetaucoapi.tarjetaucoapi.controllers.product;
 
 import org.springframework.web.bind.annotation.*;
-import com.tarjetaucoapi.tarjetaucoapi.core.product.model.ProductModel;
+import com.tarjetaucoapi.tarjetaucoapi.domains.product.model.Product;
 
 @RestController
 @RequestMapping("/api/v1/rest")
 public class ProductController {
     @GetMapping("/products")
-    public ProductModel productModel() {
-        ProductModel productModel= new ProductModel(1,"Agua",1500,"Botella de agua 100 ml");
+    public Product productModel() {
+        Product productModel= new Product(1,"Agua",1500,"Botella de agua 100 ml");
         return productModel;
     }
 

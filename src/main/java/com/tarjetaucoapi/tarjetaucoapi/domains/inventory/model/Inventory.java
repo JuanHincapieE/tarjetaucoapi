@@ -1,13 +1,13 @@
-package com.tarjetaucoapi.tarjetaucoapi.core.inventory.model;
+package com.tarjetaucoapi.tarjetaucoapi.domains.inventory.model;
 
-import com.tarjetaucoapi.tarjetaucoapi.core.product.model.ProductModel;
+import com.tarjetaucoapi.tarjetaucoapi.domains.product.model.Product;
 
-public class InventoryModel {
+public class Inventory {
     private int id;
     private int unidadesDisponibles;
-    private ProductModel productoId;
+    private Product productoId;
 
-    public InventoryModel(int id, int unidadesDisponibles, ProductModel productoId) {
+    public Inventory(int id, int unidadesDisponibles, Product productoId) {
         this.id = id;
         this.unidadesDisponibles = unidadesDisponibles;
         this.productoId = productoId;
@@ -29,11 +29,11 @@ public class InventoryModel {
         this.unidadesDisponibles = unidadesDisponibles;
     }
 
-    public ProductModel getProductoId() {
+    public Product getProductoId() {
         return productoId;
     }
 
-    public void setProductoId(ProductModel productoId) {
+    public void setProductoId(Product productoId) {
         this.productoId = productoId;
     }
 }

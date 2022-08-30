@@ -1,13 +1,13 @@
-package com.tarjetaucoapi.tarjetaucoapi.core.product.model;
+package com.tarjetaucoapi.tarjetaucoapi.domains.product.model;
 
-public class ProductModel {
+public class Product {
 
     private int idProduct;
     private String productName;
     private long productPrice;
     private String descripton;
 
-    public ProductModel(int idProduct, String productName, long productPrice, String descripton) {
+    public Product(int idProduct, String productName, long productPrice, String descripton) {
         this.idProduct = idProduct;
         this.productName = productName;
         this.productPrice = productPrice;

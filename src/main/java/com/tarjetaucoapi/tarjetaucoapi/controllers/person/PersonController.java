@@ -1,10 +1,7 @@
-package com.tarjetaucoapi.tarjetaucoapi.controller.persons;
+package com.tarjetaucoapi.tarjetaucoapi.controllers.person;
 
-import com.tarjetaucoapi.tarjetaucoapi.core.person.model.PersonModel;
+import com.tarjetaucoapi.tarjetaucoapi.domains.person.model.Person;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.HashMap;
-import java.util.Map;
 
 @RestController
 @RequestMapping("/api/v1/rest")
@@ -12,13 +9,14 @@ import java.util.Map;
 public class PersonController {
 
     // REVISAR Y ARREGLAR LOS REQUESTPARAM DE CADA CLASE.
-    @GetMapping("/persons")
-    public PersonModel  getPerson() {
+    /*@GetMapping("/persons")
+    public Person getPerson() {
 
-        PersonModel personModel = new PersonModel("Julio","Pasaporte",1678215789);
+        Person personModel = new Person(1,"26607565","Julio","Salas","lordhokage@gmail.com",
+                "texas",);
 
         return personModel;
-    }
+    }*/
     @PostMapping("/persons")
     public String postPerson(@RequestParam(required = true) String documentType, String documentNumber, String name,
                              String lastName, String email) {

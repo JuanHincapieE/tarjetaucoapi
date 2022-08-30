@@ -1,8 +1,8 @@
-package com.tarjetaucoapi.tarjetaucoapi.controller.inventory;
+package com.tarjetaucoapi.tarjetaucoapi.controllers.inventory;
 
 
-import com.tarjetaucoapi.tarjetaucoapi.core.inventory.model.InventoryModel;
-import com.tarjetaucoapi.tarjetaucoapi.core.product.model.ProductModel;
+import com.tarjetaucoapi.tarjetaucoapi.domains.inventory.model.Inventory;
+import com.tarjetaucoapi.tarjetaucoapi.domains.product.model.Product;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -11,8 +11,8 @@ import org.springframework.web.bind.annotation.*;
 public class InventoryController {
 
     @GetMapping("/inventories")
-    public InventoryModel getInventory() {
-        return new InventoryModel(1, 15, new ProductModel(123, "Papitas", 3000, "Son unas papitas"));
+    public Inventory getInventory() {
+        return new Inventory(1, 15, new Product(123, "Papitas", 3000, "Son unas papitas"));
     }
 
     @PostMapping("/inventories")

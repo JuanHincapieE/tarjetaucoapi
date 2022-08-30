@@ -1,12 +1,11 @@
-package com.tarjetaucoapi.tarjetaucoapi.controller.inventory.model;
+package com.tarjetaucoapi.tarjetaucoapi.domains.card.model;
 
-public class CardModel {
+public class Card {
 
     private int cardNumber;
+    private String userName;
 
-    private  String userName;
-
-    public CardModel(int cardNumber, String userName) {
+    public Card(int cardNumber, String userName) {
         this.cardNumber = cardNumber;
         this.userName = userName;
     }

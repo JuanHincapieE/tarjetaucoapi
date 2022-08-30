@@ -1,11 +1,11 @@
-package com.tarjetaucoapi.tarjetaucoapi.core.store.model;
+package com.tarjetaucoapi.tarjetaucoapi.domains.store.model;
 
-public class StoreModel {
+public class Store {
     private int id;
     private String name;
     private String description;
 
-    public StoreModel(int id, String name, String description){
+    public Store(int id, String name, String description){
         this.id=id;
         this.name=name;
         this.description=description;
