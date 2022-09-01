@@ -1,5 +1,6 @@
 package com.tarjetaucoapi.tarjetaucoapi.controllers.person;
 
+import com.tarjetaucoapi.tarjetaucoapi.domains.person.Person;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -7,18 +8,18 @@ import org.springframework.web.bind.annotation.*;
 
 public class PersonController {
 
-    // REVISAR Y ARREGLAR LOS REQUESTPARAM DE CADA CLASE.
-    /*@GetMapping("/persons")
+
+    @GetMapping("/persons")
     public Person getPerson() {
 
-        Person personModel = new Person(1,"26607565","Julio","Salas","lordhokage@gmail.com",
-                "texas",);
+        Person personEntity = new Person(1,"1036960741","Julio","Salas","lordhokage@gmail.com",
+                "texas","jefe",1);
 
-        return personModel;
-    }*/
+        return personEntity;
+    }
     @PostMapping("/persons")
-    public String postPerson(@RequestParam(required = true) String documentType, String documentNumber, String name,
-                             String lastName, String email) {
+    public String postPerson(@RequestParam(required = true) int id, String identification, String name,
+                             String lastName, String personalEmail, String address, String charge, int idCard) {
         return "Estoy creando una persona";
     }
 

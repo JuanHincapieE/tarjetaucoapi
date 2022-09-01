@@ -9,8 +9,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class RecordController {
     @GetMapping("/stores")
     public Record getRecord() {
-        Record record= new Record(1,"record",1);
-        return record;
+        Record recordEntity= new Record(1,"record",1);
+        return recordEntity;
     }
 
     @PostMapping("/stores")

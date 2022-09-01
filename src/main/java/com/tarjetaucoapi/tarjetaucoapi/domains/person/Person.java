@@ -8,31 +8,31 @@ public class Person {
     @Id
     private int id;
     @Column(name = "identificacion")
-    private String identificacion;
+    private String identification;
     @Column(name = "nombre")
-    private String nombre;
+    private String name;
     @Column(name = "apellidos")
-    private String apellido;
+    private String lastName;
     @Column(name = "correo_personal")
-    private String correoPersonal;
+    private String personalEmail;
     @Column(name = "direccion")
-    private String direccion;
+    private String address;
     @Column(name = "cargo")
-    private String cargo;
+    private String charge;
     @Column(name = "id_tarjeta")
-    private int idTarjeta;
-    //private Record IdHistorial;
+    private int idCard;
 
 
-    public Person(int id, String identificacion, String nombre, String apellido, String correoPersonal, String direccion, String cargo, int idTarjeta) {
+
+    public Person(int id, String identification, String name, String lastName, String personalEmail, String address, String charge, int idCard) {
         this.id = id;
-        this.identificacion = identificacion;
-        this.nombre = nombre;
-        this.apellido = apellido;
-        this.correoPersonal = correoPersonal;
-        this.direccion = direccion;
-        this.cargo = cargo;
-        this.idTarjeta = idTarjeta;
+        this.identification = identification;
+        this.name = name;
+        this.lastName = lastName;
+        this.personalEmail = personalEmail;
+        this.address = address;
+        this.charge = charge;
+        this.idCard = idCard;
     }
 
     public Person() {
@@ -48,59 +48,59 @@ public class Person {
         this.id = id;
     }
 
-    public String getIdentificacion() {
-        return identificacion;
+    public String getIdentification() {
+        return identification;
     }
 
-    public void setIdentificacion(String identificacion) {
-        this.identificacion = identificacion;
+    public void setIdentification(String identification) {
+        this.identification = identification;
     }
 
-    public String getNombre() {
-        return nombre;
+    public String getName() {
+        return name;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getApellido() {
-        return apellido;
+    public String getLastName() {
+        return lastName;
     }
 
-    public void setApellido(String apellido) {
-        this.apellido = apellido;
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
-    public String getCorreoPersonal() {
-        return correoPersonal;
+    public String getPersonalEmail() {
+        return personalEmail;
     }
 
-    public void setCorreoPersonal(String correoPersonal) {
-        this.correoPersonal = correoPersonal;
+    public void setPersonalEmail(String personalEmail) {
+        this.personalEmail = personalEmail;
     }
 
-    public String getDireccion() {
-        return direccion;
+    public String getAddress() {
+        return address;
     }
 
-    public void setDireccion(String direccion) {
-        this.direccion = direccion;
+    public void setAddress(String address) {
+        this.address = address;
     }
 
-    public String getCargo() {
-        return cargo;
+    public String getCharge() {
+        return charge;
     }
 
-    public void setCargo(String cargo) {
-        this.cargo = cargo;
+    public void setCharge(String charge) {
+        this.charge = charge;
     }
 
-    public int getIdTarjeta() {
-        return idTarjeta;
+    public int getIdCard() {
+        return idCard;
     }
 
-    public void setIdTarjeta(int idTarjeta) {
-        this.idTarjeta = idTarjeta;
+    public void setIdCard(int idCard) {
+        this.idCard = idCard;
     }
 }
