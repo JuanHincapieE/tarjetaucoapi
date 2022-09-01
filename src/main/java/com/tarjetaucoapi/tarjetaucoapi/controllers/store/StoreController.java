@@ -9,13 +9,13 @@ import org.springframework.web.bind.annotation.*;
 public class StoreController {
 
     @GetMapping("/stores")
-    public Store storeModel() {
-        Store storeModel= new Store(1,"Botarochitas","Tus platanitos al mejor precio");
-        return storeModel;
+    public Store getStore() {
+        Store store= new Store(1,"Botarochitas",1,1,1);
+        return store;
     }
 
     @PostMapping("/stores")
-    public String  postStore(@RequestParam(required = true) String id, String name, String description){
+    public String  postStore(@RequestParam(required = true) String id, String name, int idProduct, int idInventory, int idRecord){
         return "Estoy creando una tienda!!!";
     }
 

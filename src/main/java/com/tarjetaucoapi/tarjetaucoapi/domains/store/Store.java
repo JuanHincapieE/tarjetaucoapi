@@ -1,37 +1,74 @@
 package com.tarjetaucoapi.tarjetaucoapi.domains.store;
 
-public class Store {
-    private int id;
-    private String name;
-    private String description;
 
-    public Store(int id, String name, String description){
-        this.id=id;
-        this.name=name;
-        this.description=description;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="tienda")
+public class Store {
+    @Id
+    private int id;
+    @Column(name="nombre")
+    private String name;
+    @Column(name="id_producto")
+    private int idProduct;
+    @Column(name="id_inventario")
+    private int idInventory;
+    @Column(name="id_historial")
+    private int idRecord;
+
+
+    public Store() {
     }
 
-    public int getStoreId() {
+    public Store(int id, String name, int idProduct, int idInventory, int idRecord) {
+        this.id = id;
+        this.name = name;
+        this.idProduct = idProduct;
+        this.idInventory = idInventory;
+        this.idRecord = idRecord;
+    }
+
+    public int getId() {
         return id;
     }
 
-    public String getStoreName() {
-        return name;
-    }
-
-    public String getStoreDescription() {
-        return description;
-    }
-
-    public void setStoreId(int id) {
+    public void setId(int id) {
         this.id = id;
     }
 
-    public void setStoreName(String name) {
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
         this.name = name;
     }
 
-    public void setStoreDescription(String description) {
-        this.description = description;
+    public int getIdProduct() {
+        return idProduct;
+    }
+
+    public void setIdProduct(int idProducto) {
+        this.idProduct = idProducto;
+    }
+
+    public int getIdInventory() {
+        return idInventory;
+    }
+
+    public void setIdInventory(int idInventory) {
+        this.idInventory = idInventory;
+    }
+
+    public int getIdRecord() {
+        return idRecord;
+    }
+
+    public void setIdRecord(int idRecord) {
+        this.idRecord = idRecord;
     }
 }
