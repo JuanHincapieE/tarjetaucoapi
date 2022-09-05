@@ -1,10 +1,20 @@
 package com.tarjetaucoapi.tarjetaucoapi.domains.product;
 
-public class Product {
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
+@Entity
+@Table(name= "producto")
+public class Product {
+    @Id
     private int idProduct;
+    @Column(name = "nombre")
     private String productName;
+    @Column(name = "precio")
     private long productPrice;
+    @Column(name = "descripcion")
     private String descripton;
 
     public Product(int idProduct, String productName, long productPrice, String descripton) {
@@ -12,6 +22,10 @@ public class Product {
         this.productName = productName;
         this.productPrice = productPrice;
         this.descripton = descripton;
+    }
+
+    public Product() {
+
     }
 
     public int getIdProduct() {
