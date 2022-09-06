@@ -1,23 +1,24 @@
 package com.tarjetaucoapi.tarjetaucoapi.controllers.inventory;
 
 
-import com.tarjetaucoapi.tarjetaucoapi.domains.inventory.Inventory;
-import com.tarjetaucoapi.tarjetaucoapi.domains.product.Product;
+import com.tarjetaucoapi.tarjetaucoapi.repositories.store.inventory.Inventory;
+import com.tarjetaucoapi.tarjetaucoapi.services.inventories.IInventoryService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/api/v1/rest")
 public class InventoryController {
+    @Autowired
+    private IInventoryService inventoryService;
 
     @GetMapping("/inventories")
-    public Inventory getInventory() {
-        return new Inventory(1, 15, 1);
+    public List<Inventory> index(){
+        return inventoryService.findAll();
     }
 
-    @PostMapping("/inventories")
-    public String  postInventory(@RequestParam(required = true) String idProduct, String productName, String productType, String idStore, String storeName){
-        return "Estoy creando un inventario";
-    }
 }
 
 

@@ -1,5 +1,9 @@
 package com.tarjetaucoapi.tarjetaucoapi.repositories.inventory;
 
-public interface IInventoryRepository {
+import com.tarjetaucoapi.tarjetaucoapi.repositories.store.inventory.Inventory;
+import org.springframework.data.repository.CrudRepository;
+
+
+public interface IInventoryRepository extends CrudRepository<Inventory, Integer> {
 
 }

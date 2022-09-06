@@ -6,8 +6,4 @@ import org.springframework.data.repository.CrudRepository;
 
 public interface IPersonRepository extends CrudRepository<Person, Integer> {
 
-    /*@Query("SELECT nombre  FROM usuario WHERE usuario.id = ")
-
-    List<Car> getCarsByModel(@Param("model") String model);*/
-
 }
