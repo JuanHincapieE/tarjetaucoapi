@@ -1,18 +1,22 @@
 package com.tarjetaucoapi.tarjetaucoapi.controllers.productType;
 
 import com.tarjetaucoapi.tarjetaucoapi.domains.productType.ProductType;
+import com.tarjetaucoapi.tarjetaucoapi.services.productTypes.IProductTypeService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/api/v1/rest")
 public class ProductTypeController {
+
+    @Autowired
+    private IProductTypeService productTypeService;
     @GetMapping("/producttype")
-    public ProductType getProductType() {
-        return new ProductType(1, "Glacitas", "Las mejores galletas");
+    public List<ProductType> index(){
+        return productTypeService.findAll();
     }
 
-    @PostMapping("/inventories")
-    public String  postInventory(@RequestParam(required = true) int id, String name, String description){
-        return "Estoy creando un tipo de producto";
-    }
+
 }

@@ -1,4 +1,4 @@
-package com.tarjetaucoapi.tarjetaucoapi.repositories.store.inventory;
+package com.tarjetaucoapi.tarjetaucoapi.domains.inventory;
 
 
 import javax.persistence.*;
