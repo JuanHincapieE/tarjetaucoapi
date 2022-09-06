@@ -1,13 +1,12 @@
 package com.tarjetaucoapi.tarjetaucoapi.controllers.productType;
 
-import com.tarjetaucoapi.tarjetaucoapi.domains.inventory.Inventory;
 import com.tarjetaucoapi.tarjetaucoapi.domains.productType.ProductType;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/v1/rest")
 public class ProductTypeController {
-    @GetMapping("/inventories")
+    @GetMapping("/producttype")
     public ProductType getProductType() {
         return new ProductType(1, "Glacitas", "Las mejores galletas");
     }
