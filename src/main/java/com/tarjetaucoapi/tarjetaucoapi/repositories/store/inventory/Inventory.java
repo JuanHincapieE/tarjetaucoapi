@@ -1,30 +1,19 @@
-package com.tarjetaucoapi.tarjetaucoapi.domains.inventory;
+package com.tarjetaucoapi.tarjetaucoapi.repositories.store.inventory;
 
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.io.Serializable;
 
 @Entity
 @Table(name ="inventario")
-public class Inventory {
+public class Inventory implements Serializable {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     @Column(name = "unidades_disponibles")
     private int availableUnits;
     @Column(name = "id_producto")
     private int productId;
-
-    public Inventory(int id, int availableUnits, int productId) {
-        this.id = id;
-        this.availableUnits = availableUnits;
-        this.productId = productId;
-    }
-
-    public Inventory() {
-
-    }
 
     public int getId() {
         return id;
@@ -49,4 +38,6 @@ public class Inventory {
     public void setProductId(int productId) {
         this.productId = productId;
     }
+
+    private static final long serialVersionUID = 1L;
 }
