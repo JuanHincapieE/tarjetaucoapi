@@ -1,6 +1,6 @@
 package com.tarjetaucoapi.tarjetaucoapi.services.inventories;
 
-import com.tarjetaucoapi.tarjetaucoapi.repositories.store.inventory.Inventory;
+import com.tarjetaucoapi.tarjetaucoapi.domains.inventory.Inventory;
 
 import java.util.List;
 

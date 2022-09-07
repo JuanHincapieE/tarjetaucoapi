@@ -1,20 +1,24 @@
 package com.tarjetaucoapi.tarjetaucoapi.controllers.record;
-
-
 import com.tarjetaucoapi.tarjetaucoapi.domains.record.Record;
+import com.tarjetaucoapi.tarjetaucoapi.services.records.IRecordService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+
+
+import java.util.List;
 
 public class RecordController {
-    @GetMapping("/stores")
-    public Record getRecord() {
-        Record recordEntity= new Record(1,"record",1);
-        return recordEntity;
+    @Autowired
+    private IRecordService recordService;
+
+    @GetMapping("/records")
+    public List<Record> index(){
+        return recordService.findAll();
     }
 
-    @PostMapping("/stores")
-    public String  postRecord(@RequestParam(required = true) String id, String description, int idPurchase){
-        return "Creando un registro en el historial";
+    @GetMapping("/records/1")
+    public Record storeById(){
+        return recordService.findById(1);
     }
+
 }
