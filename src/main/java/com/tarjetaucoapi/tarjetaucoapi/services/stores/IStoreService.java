@@ -6,4 +6,5 @@ public interface IStoreService {
     public List<Store> findAll();
 
     public Store findById(int id);
+
 }
