@@ -2,18 +2,22 @@ package com.tarjetaucoapi.tarjetaucoapi.controllers.purchase;
 
 
 import com.tarjetaucoapi.tarjetaucoapi.domains.purchase.Purchase;
+import com.tarjetaucoapi.tarjetaucoapi.services.purchase.IPurchaseService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/api/v1/rest")
 public class PurchaseController {
-    @GetMapping("/purchase")
-    public Purchase purchaseModel() {
-        Purchase productModel= new Purchase(1,1234,1500,1222345);
-        return purchaseModel();
+    @Autowired
+    private IPurchaseService purchaseService;
+
+    @GetMapping("/purchases")
+    public List<Purchase> index() {
+        return purchaseService.findAll();
     }
-    @PostMapping("/purchase")
-    public String  postPurchase(@RequestParam(required = true) int idProduct, int consecutive, int amount, int productId){
-        return "Estoy creando una compra";
-    }
+
+
 }
