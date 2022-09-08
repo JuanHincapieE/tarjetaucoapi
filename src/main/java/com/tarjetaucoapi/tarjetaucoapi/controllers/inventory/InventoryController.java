@@ -19,6 +19,15 @@ public class InventoryController {
         return inventoryService.findAll();
     }
 
+    @GetMapping("/inventories/{id}")
+    public Inventory show(@PathVariable int id){
+        return inventoryService.findById(id);
+    }
+    @PostMapping("/clientes")
+    public Inventory create(@RequestBody Inventory inventory){
+        return inventoryService.save(inventory);
+    }
+
 }
 
 

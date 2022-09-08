@@ -16,4 +16,22 @@ public class InventoryServiceImpl implements  IInventoryService{
     @Override
     @Transactional(readOnly = true)
     public List<Inventory> findAll() { return (List<Inventory>) inventoryRepository.findAll(); }
+
+    @Override
+    @Transactional(readOnly = true)
+    public Inventory findById(int id) {
+        return inventoryRepository.findById(id).orElse(null);
+    }
+
+    @Override
+    @Transactional
+    public Inventory save(Inventory inventory) {
+        return inventoryRepository.save(inventory);
+    }
+
+    @Override
+    @Transactional
+    public void delete(int id) {
+        inventoryRepository.deleteById(id);
+    }
 }
