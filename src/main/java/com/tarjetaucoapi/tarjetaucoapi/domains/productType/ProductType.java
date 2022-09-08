@@ -1,6 +1,4 @@
 package com.tarjetaucoapi.tarjetaucoapi.domains.productType;
-
-
 import javax.persistence.*;
 
 @Entity

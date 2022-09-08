@@ -6,11 +6,11 @@ import com.tarjetaucoapi.tarjetaucoapi.domains.productType.ProductType;
 import java.util.List;
 
 public interface IProductTypeService {
-    public List<ProductType> findAll();
+    List<ProductType> findAll();
 
-    public ProductType findById(int id);
+    ProductType findById(int id);
 
-    public ProductType save(ProductType productType);
+    ProductType save(ProductType productType);
 
-    public void delete(int id);
+    void delete(int id);
 }

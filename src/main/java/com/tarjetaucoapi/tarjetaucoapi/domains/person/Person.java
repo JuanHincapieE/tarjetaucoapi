@@ -24,22 +24,6 @@ public class Person {
 
 
 
-    public Person(int id, String identification, String name, String lastName, String personalEmail, String address, String charge, int idCard) {
-        this.id = id;
-        this.identification = identification;
-        this.name = name;
-        this.lastName = lastName;
-        this.personalEmail = personalEmail;
-        this.address = address;
-        this.charge = charge;
-        this.idCard = idCard;
-    }
-
-    public Person() {
-
-    }
-
-
     public int getId() {
         return id;
     }
