@@ -7,10 +7,10 @@ import java.util.List;
 public interface IInventoryService {
     List<Inventory> findAll();
 
-    public Inventory findById(int id);
+    Inventory findById(int id);
 
-    public Inventory save(Inventory inventory);
+    Inventory save(Inventory inventory);
 
-    public void delete(int id);
+    void delete(int id);
 
 }
