@@ -34,7 +34,7 @@ public class CardController {
     public Card create(@RequestBody Card card){return cardService.save(card);
     }
 
-    /*@PutMapping("/inventories/{id}")
+    /*@PutMapping("/inventories/{id}")a
     @ResponseStatus(HttpStatus.CREATED)
     public Inventory update(@RequestBody Inventory inventory, int id){
         Inventory currentInventory = inventoryService.findById(id);
