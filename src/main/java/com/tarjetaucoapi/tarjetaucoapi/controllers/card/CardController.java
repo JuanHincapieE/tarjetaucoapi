@@ -35,7 +35,7 @@ public class CardController {
     }
 
     /*@PutMapping("/inventories/{id}")a
-    @ResponseStatus(HttpStatus.CREATED)
+    @ResponseStatus(HttpStatus.CREATED)a
     public Inventory update(@RequestBody Inventory inventory, int id){
         Inventory currentInventory = inventoryService.findById(id);
 
