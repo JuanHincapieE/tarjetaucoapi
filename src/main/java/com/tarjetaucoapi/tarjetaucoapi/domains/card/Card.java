@@ -1,28 +1,34 @@
 package com.tarjetaucoapi.tarjetaucoapi.domains.card;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name ="tarjeta")
 public class Card {
 
-    private int cardNumber;
-    private String userName;
+    @Id
+    private int id;
 
-    public Card(int cardNumber, String userName) {
-        this.cardNumber = cardNumber;
-        this.userName = userName;
+    @Column(name = "saldo")
+    private String saldo;
+
+    public int getId() {
+        return id;
     }
 
-    public int getCardNumber() {
-        return cardNumber;
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public void setCardNumber(int cardNumber) {
-        this.cardNumber = cardNumber;
+    public String getSaldo() {
+        return saldo;
     }
 
-    public String getUserName() {
-        return userName;
-    }
-
-    public void setUserName(String userName) {
-        this.userName = userName;
+    public void setSaldo(String saldo) {
+        this.saldo = saldo;
     }
 }
+

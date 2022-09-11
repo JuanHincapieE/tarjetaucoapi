@@ -1,4 +1,4 @@
-package com.tarjetaucoapi.tarjetaucoapi.controllers.record;
+package com.tarjetaucoapi.tarjetaucoapi.domains.product.record;
 
 
 import com.tarjetaucoapi.tarjetaucoapi.domains.record.Record;

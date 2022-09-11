@@ -2,8 +2,12 @@ package com.tarjetaucoapi.tarjetaucoapi.controllers.card;
 
 
 import com.tarjetaucoapi.tarjetaucoapi.domains.card.Card;
+import com.tarjetaucoapi.tarjetaucoapi.services.card.ICardService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.Random;
 
 @RestController
@@ -11,20 +15,37 @@ import java.util.Random;
 
 public class CardController {
 
-    //, CardNumber, USERNAME, USERLASTNAME, CVV, EXPIRATION
+    @Autowired
+    private ICardService cardService;
+
     @GetMapping("/cards")
-    public Card getcard() {
-        Random random = new Random();
-
-        Card cardModel = new Card(random.nextInt(13),"Julio");
-
-        return cardModel;
+    public List<Card> index() {
+        return cardService.findAll();
 
     }
+
+    @GetMapping("/cards/{id}")
+    public Card show(@PathVariable int id ) {return cardService.findById(id);}
+
+
+
     @PostMapping("/cards")
-    public String postcard(@RequestParam(required = true) int CardNumber, String UserName,
-                             String UserLastName, int CVV, int Expiration){
-
-        return "estoy creando una tarjeta a";
+    @ResponseStatus(HttpStatus.CREATED)
+    public Card create(@RequestBody Card card){return cardService.save(card);
     }
+
+    /*@PutMapping("/inventories/{id}")
+    @ResponseStatus(HttpStatus.CREATED)
+    public Inventory update(@RequestBody Inventory inventory, int id){
+        Inventory currentInventory = inventoryService.findById(id);
+
+        currentInventory.setAvailableUnits(inventory.getAvailableUnits());
+
+        return inventoryService.save(currentInventory);*/
+
+    @DeleteMapping("/cards{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void delete(@PathVariable int id) {cardService.delete(id);}
+
+
 }
