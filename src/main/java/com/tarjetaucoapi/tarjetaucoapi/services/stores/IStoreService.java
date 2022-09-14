@@ -7,4 +7,8 @@ public interface IStoreService {
 
     public Store findById(int id);
 
+    public Store save(Store store);
+
+    void delete(int id);
+
 }

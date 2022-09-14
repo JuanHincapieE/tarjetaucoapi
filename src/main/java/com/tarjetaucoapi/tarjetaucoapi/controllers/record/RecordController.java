@@ -1,8 +1,10 @@
 package com.tarjetaucoapi.tarjetaucoapi.controllers.record;
 import com.tarjetaucoapi.tarjetaucoapi.domains.record.Record;
+import com.tarjetaucoapi.tarjetaucoapi.domains.store.Store;
 import com.tarjetaucoapi.tarjetaucoapi.services.records.IRecordService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.*;
 
 
 import java.util.List;
@@ -11,14 +13,32 @@ public class RecordController {
     @Autowired
     private IRecordService recordService;
 
-    @GetMapping("/records")
+    @GetMapping("/record")
     public List<Record> index(){
         return recordService.findAll();
     }
 
-    @GetMapping("/records/1")
-    public Record recordById(){
-        return recordService.findById(1);
+    @GetMapping("/record/{id}")
+    public Record show(@PathVariable int id){
+        return recordService.findById(id);
     }
 
+    @PostMapping("/records")
+    @ResponseStatus(HttpStatus.CREATED)
+    public Record create(@RequestBody Record record){
+        return recordService.save(record);
+    }
+
+    @PutMapping("/records/{id}")
+    @ResponseStatus(HttpStatus.CREATED)
+    public Record update(@RequestBody Record record, int id){
+        Record currentRecord = recordService.findById(id);
+        currentRecord.setDescription(record.getDescription());
+        return recordService.save(currentRecord);
+    }
+    @DeleteMapping("/records/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void delete(@PathVariable int id){
+        recordService.delete(id);
+    }
 }
