@@ -2,7 +2,6 @@ package com.tarjetaucoapi.tarjetaucoapi.services.inventories;
 
 import com.tarjetaucoapi.tarjetaucoapi.domains.inventory.Inventory;
 import com.tarjetaucoapi.tarjetaucoapi.repositories.inventory.IInventoryRepository;
-import com.tarjetaucoapi.tarjetaucoapi.services.inventories.IInventoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
