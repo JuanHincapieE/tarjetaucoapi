@@ -17,7 +17,7 @@ public class RecordController {
     }
 
     @GetMapping("/records/1")
-    public Record storeById(){
+    public Record recordById(){
         return recordService.findById(1);
     }
 
