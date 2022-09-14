@@ -1,8 +1,5 @@
 package com.tarjetaucoapi.tarjetaucoapi.controllers.store;
-
-import com.tarjetaucoapi.tarjetaucoapi.domains.inventory.Inventory;
 import com.tarjetaucoapi.tarjetaucoapi.domains.store.Store;
-import com.tarjetaucoapi.tarjetaucoapi.services.inventories.IInventoryService;
 import com.tarjetaucoapi.tarjetaucoapi.services.stores.IStoreService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -24,7 +21,7 @@ public class StoreController {
         return storeService.findAll();
     }
 
-    @GetMapping("/store/{id}}")
+    @GetMapping("/store/{id}")
     public Store show(@PathVariable int id){
         return storeService.findById(id);
     }
@@ -37,9 +34,12 @@ public class StoreController {
 
     @PutMapping("/stores/{id}")
     @ResponseStatus(HttpStatus.CREATED)
-    public Store update(@RequestBody Store store, int id){
+    public Store update(@RequestBody Store store,@PathVariable int id){
         Store currentStore = storeService.findById(id);
         currentStore.setName(store.getName());
+        currentStore.setIdInventory(store.getIdInventory());
+        currentStore.setIdProduct(store.getIdProduct());
+        currentStore.setIdRecord(store.getIdRecord());
         return storeService.save(currentStore);
     }
 

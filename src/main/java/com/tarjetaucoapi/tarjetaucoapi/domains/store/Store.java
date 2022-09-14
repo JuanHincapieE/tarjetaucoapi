@@ -1,15 +1,13 @@
 package com.tarjetaucoapi.tarjetaucoapi.domains.store;
 
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name="tienda")
 public class Store {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     @Column(name="nombre")
     private String name;
