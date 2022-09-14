@@ -1,9 +1,4 @@
 package com.tarjetaucoapi.tarjetaucoapi.controllers.inventory;
-<<<<<<< HEAD
-
-
-=======
->>>>>>> 1b7d911aca6c26594217a2e5a960836be2161208
 import com.tarjetaucoapi.tarjetaucoapi.domains.inventory.Inventory;
 import com.tarjetaucoapi.tarjetaucoapi.services.inventories.IInventoryService;
 import org.springframework.beans.factory.annotation.Autowired;
