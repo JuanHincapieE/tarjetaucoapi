@@ -31,9 +31,10 @@ public class RecordController {
 
     @PutMapping("/records/{id}")
     @ResponseStatus(HttpStatus.CREATED)
-    public Record update(@RequestBody Record record, int id){
+    public Record update(@RequestBody Record record,@PathVariable int id){
         Record currentRecord = recordService.findById(id);
         currentRecord.setDescription(record.getDescription());
+        currentRecord.setIdPurchase(record.getIdPurchase());
         return recordService.save(currentRecord);
     }
     @DeleteMapping("/records/{id}")

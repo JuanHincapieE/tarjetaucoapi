@@ -14,10 +14,10 @@ public class PurchaseController {
     @Autowired
     private IPurchaseService purchaseService;
 
-    @GetMapping("/purchases")
+    /*@GetMapping("/purchases")
     public List<Purchase> index() {
         return purchaseService.findAll();
-    }
+    }*/
 
 
 }
