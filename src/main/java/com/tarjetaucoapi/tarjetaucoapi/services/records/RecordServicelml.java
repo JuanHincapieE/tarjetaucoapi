@@ -1,6 +1,7 @@
 package com.tarjetaucoapi.tarjetaucoapi.services.records;
 
 import com.tarjetaucoapi.tarjetaucoapi.domains.record.Record;
+import com.tarjetaucoapi.tarjetaucoapi.domains.store.Store;
 import com.tarjetaucoapi.tarjetaucoapi.repositories.record.IRecordRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -26,4 +27,14 @@ public class RecordServicelml implements IRecordService{
         return recordRepository.findById(id).orElse(null);
     }
 
+    @Override
+    @Transactional
+    public Record save(Record record) {
+        return recordRepository.save(record);
+    }
+    @Override
+    @Transactional
+    public void delete(int id) {
+        recordRepository.deleteById(id);
+    }
 }

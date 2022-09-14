@@ -5,6 +5,7 @@ import com.tarjetaucoapi.tarjetaucoapi.domains.store.Store;
 import com.tarjetaucoapi.tarjetaucoapi.services.inventories.IInventoryService;
 import com.tarjetaucoapi.tarjetaucoapi.services.stores.IStoreService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -23,10 +24,28 @@ public class StoreController {
         return storeService.findAll();
     }
 
-    @GetMapping("/store/1")
-    public Store storeById(){
-        return storeService.findById(1);
+    @GetMapping("/store/{id}}")
+    public Store show(@PathVariable int id){
+        return storeService.findById(id);
     }
 
+    @PostMapping("/stores")
+    @ResponseStatus(HttpStatus.CREATED)
+    public Store create(@RequestBody Store store){
+        return storeService.save(store);
+    }
 
+    @PutMapping("/stores/{id}")
+    @ResponseStatus(HttpStatus.CREATED)
+    public Store update(@RequestBody Store store, int id){
+        Store currentStore = storeService.findById(id);
+        currentStore.setName(store.getName());
+        return storeService.save(currentStore);
+    }
+
+    @DeleteMapping("/stores/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void delete(@PathVariable int id){
+        storeService.delete(id);
+    }
 }

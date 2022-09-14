@@ -27,4 +27,15 @@ public class StoreServiceImpl implements IStoreService{
         return storeRepository.findById(id).orElse(null);
     }
 
+    @Override
+    @Transactional
+    public Store save(Store store) {
+        return storeRepository.save(store);
+    }
+    @Override
+    @Transactional
+    public void delete(int id) {
+        storeRepository.deleteById(id);
+    }
+
 }
