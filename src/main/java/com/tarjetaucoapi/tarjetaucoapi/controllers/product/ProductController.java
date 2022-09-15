@@ -37,7 +37,8 @@ public class ProductController {
     public Product update(@RequestBody Product product, int id){
         Product currentProduct = productService.findById(id);
         currentProduct.setProductName(product.getProductName());
-        currentProduct.setIdProduct(product.getIdProduct());
+        currentProduct.setProductPrice(product.getProductPrice());
+        currentProduct.setDescripton(product.getDescripton());
         return productService.save(currentProduct);
     }
 

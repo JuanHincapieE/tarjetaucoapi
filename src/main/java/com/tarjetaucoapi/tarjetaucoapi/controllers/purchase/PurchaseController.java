@@ -36,7 +36,7 @@ public class PurchaseController {
     @ResponseStatus(HttpStatus.CREATED)
     public Purchase update(@RequestBody Purchase purchase, int id){
         Purchase currentPurchase = purchaseService.findById(id);
-        currentPurchase.setId(purchase.getId());
+        currentPurchase.setAmount(purchase.getAmount());
         currentPurchase.setConsecutive(purchase.getConsecutive());
         return purchaseService.save(currentPurchase);
     }
