@@ -18,4 +18,19 @@ public class PurchaseServiceImpl implements IPurchaseService {
     public List<Purchase> findAll() {
         return (List<Purchase>) purchaseRepository.findAll();
     }
+
+    @Override
+    public Purchase findById(int id) {
+        return null;
+    }
+
+    @Override
+    public Purchase save(Purchase purchase) {
+        return null;
+    }
+
+    @Override
+    public void delete(int id) {
+
+    }
 }
