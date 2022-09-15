@@ -18,5 +18,20 @@ public class ProductServiceImpl implements IProductService {
         return (List<Product>) productRepository.findAll();
     }
 
+    @Override
+    public Product findById(int id) {
+        return null;
+    }
+
+    @Override
+    public Product save(Product product) {
+        return null;
+    }
+
+    @Override
+    public void delete(int id) {
+
+    }
+
 
 }
