@@ -1,14 +1,13 @@
 package com.tarjetaucoapi.tarjetaucoapi.controllers.record;
 import com.tarjetaucoapi.tarjetaucoapi.domains.record.Record;
-import com.tarjetaucoapi.tarjetaucoapi.domains.store.Store;
 import com.tarjetaucoapi.tarjetaucoapi.services.records.IRecordService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
-
-
 import java.util.List;
 
+@RestController
+@RequestMapping("/api/v1/rest")
 public class RecordController {
     @Autowired
     private IRecordService recordService;
