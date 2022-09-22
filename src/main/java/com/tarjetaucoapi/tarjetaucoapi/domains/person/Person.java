@@ -3,7 +3,7 @@ package com.tarjetaucoapi.tarjetaucoapi.domains.person;
 import javax.persistence.*;
 
 @Entity
-@Table(name ="usuario")
+@Table(name ="persona")
 public class Person {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

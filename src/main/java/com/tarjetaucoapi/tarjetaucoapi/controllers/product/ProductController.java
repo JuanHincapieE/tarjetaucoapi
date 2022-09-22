@@ -22,8 +22,8 @@ public class ProductController {
     }
 
     @GetMapping("/product/{id}")
-    public List<Product> show(@PathVariable int id){
-        return productService.findAll();
+    public Product show(@PathVariable int id){
+        return productService.findById(id);
     }
 
     @PostMapping("/product")
@@ -39,6 +39,7 @@ public class ProductController {
         currentProduct.setProductName(product.getProductName());
         currentProduct.setProductPrice(product.getProductPrice());
         currentProduct.setDescripton(product.getDescripton());
+        currentProduct.setProductType(product.getProductType());
         return productService.save(currentProduct);
     }
 
