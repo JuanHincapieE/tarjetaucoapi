@@ -3,7 +3,7 @@ package com.tarjetaucoapi.tarjetaucoapi.domains.user;
 import javax.persistence.*;
 
 @Entity
-@Table(name= "person")
+@Table(name= "usuario")
 public class User {
 
     @Id
