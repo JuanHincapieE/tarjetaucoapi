@@ -1,7 +1,6 @@
 package com.tarjetaucoapi.tarjetaucoapi.controllers.purchase;
 
 
-import com.tarjetaucoapi.tarjetaucoapi.domains.product.Product;
 import com.tarjetaucoapi.tarjetaucoapi.domains.purchase.Purchase;
 import com.tarjetaucoapi.tarjetaucoapi.services.purchase.IPurchaseService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,8 +21,8 @@ public class PurchaseController {
     }
 
     @GetMapping("/purchase/{id}")
-    public List<Purchase> show(@PathVariable int id){
-        return purchaseService.findAll();
+    public Purchase show(@PathVariable int id){
+        return purchaseService.findById(id);
     }
 
     @PostMapping("/purchase")

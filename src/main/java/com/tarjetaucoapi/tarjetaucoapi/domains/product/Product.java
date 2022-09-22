@@ -1,27 +1,29 @@
 package com.tarjetaucoapi.tarjetaucoapi.domains.product;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.math.BigDecimal;
 
 @Entity
 @Table(name= "producto")
 public class Product {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idProduct;
-    @Column(name = "nombre")
-    private String productName;
     @Column(name = "precio")
-    private long productPrice;
+    private int productPrice;
     @Column(name = "descripcion")
     private String descripton;
+    @Column(name = "nombre")
+    private String productName;
+    @Column(name = "id_tipo_producto")
+    private int productType;
 
-    public Product(int idProduct, String productName, long productPrice, String descripton) {
+    public Product(int idProduct, String productName, int productPrice, String descripton, int productType) {
         this.idProduct = idProduct;
         this.productName = productName;
         this.productPrice = productPrice;
         this.descripton = descripton;
+        this.productType = productType;
     }
 
     public Product() {
@@ -36,12 +38,16 @@ public class Product {
         return productName;
     }
 
-    public long getProductPrice() {
+    public int getProductPrice() {
         return productPrice;
     }
 
     public String getDescripton() {
         return descripton;
+    }
+
+    public int getProductType() {
+        return productType;
     }
 
     public void setIdProduct(int idProduct) {
@@ -52,11 +58,15 @@ public class Product {
         this.productName = productName;
     }
 
-    public void setProductPrice(long productPrice) {
+    public void setProductPrice(int productPrice) {
         this.productPrice = productPrice;
     }
 
     public void setDescripton(String descripton) {
         this.descripton = descripton;
+    }
+
+    public void setProductType(int productType) {
+        this.productType = productType;
     }
 }

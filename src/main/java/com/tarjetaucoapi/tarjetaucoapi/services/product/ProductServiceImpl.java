@@ -19,18 +19,21 @@ public class ProductServiceImpl implements IProductService {
     }
 
     @Override
+    @Transactional(readOnly = true)
     public Product findById(int id) {
-        return null;
+        return productRepository.findById(id).orElse(null);
     }
 
     @Override
+    @Transactional
     public Product save(Product product) {
-        return null;
+        return productRepository.save(product);
     }
 
     @Override
+    @Transactional
     public void delete(int id) {
-
+        productRepository.deleteById(id);
     }
 
 

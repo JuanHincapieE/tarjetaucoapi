@@ -20,17 +20,20 @@ public class PurchaseServiceImpl implements IPurchaseService {
     }
 
     @Override
+    @Transactional(readOnly = true)
     public Purchase findById(int id) {
-        return null;
+        return purchaseRepository.findById(id).orElse(null);
     }
 
     @Override
+    @Transactional
     public Purchase save(Purchase purchase) {
-        return null;
+        return purchaseRepository.save(purchase);
     }
 
     @Override
+    @Transactional
     public void delete(int id) {
-
+        purchaseRepository.deleteById(id);
     }
 }
