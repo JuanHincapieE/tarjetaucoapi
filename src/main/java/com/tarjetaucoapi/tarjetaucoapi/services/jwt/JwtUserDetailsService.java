@@ -3,6 +3,7 @@ package com.tarjetaucoapi.tarjetaucoapi.services.jwt;
 import com.tarjetaucoapi.tarjetaucoapi.domains.user.User;
 import com.tarjetaucoapi.tarjetaucoapi.repositories.user.IUserRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -16,7 +17,10 @@ import java.util.ArrayList;
 @RequiredArgsConstructor
 public class JwtUserDetailsService implements UserDetailsService {
 
+    @Autowired
     private final IUserRepository iUserRepository;
+
+    @Autowired
     private final PasswordEncoder passwordEncoder;
 
     @Override
@@ -28,6 +32,7 @@ public class JwtUserDetailsService implements UserDetailsService {
         return new org.springframework.security.core.userdetails.User(user.getUserName(), user.getPassword(),
                 new ArrayList<>());
     }
+
 
     public User save(User user) {
         user.setPassword(passwordEncoder.encode(user.getPassword()));
