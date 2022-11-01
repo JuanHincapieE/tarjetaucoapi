@@ -3,15 +3,24 @@ package com.tarjetaucoapi.tarjetaucoapi.services.purchase;
 
 import com.tarjetaucoapi.tarjetaucoapi.domains.purchase.Purchase;
 import com.tarjetaucoapi.tarjetaucoapi.repositories.purchase.IPurchaseRepository;
+import com.tarjetaucoapi.tarjetaucoapi.util.IMessageSender;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
 import java.util.List;
 
 @Service
 public class PurchaseServiceImpl implements IPurchaseService {
+    private final IMessageSender<Purchase> messageSenderPurchase;
+
     @Autowired
     private IPurchaseRepository purchaseRepository;
+
+    public PurchaseServiceImpl(IMessageSender<Purchase> messageSenderPurchase) {
+        this.messageSenderPurchase = messageSenderPurchase;
+    }
+
 
     @Override
     @Transactional(readOnly = true)
@@ -28,6 +37,7 @@ public class PurchaseServiceImpl implements IPurchaseService {
     @Override
     @Transactional
     public Purchase save(Purchase purchase) {
+        messageSenderPurchase.execute(purchase);
         return purchaseRepository.save(purchase);
     }
 
