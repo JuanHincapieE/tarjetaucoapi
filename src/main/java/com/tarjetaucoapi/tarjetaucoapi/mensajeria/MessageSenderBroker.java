@@ -2,6 +2,7 @@ package com.tarjetaucoapi.tarjetaucoapi.mensajeria;
 
 import com.tarjetaucoapi.tarjetaucoapi.config.ClientQueueConfig;
 import com.tarjetaucoapi.tarjetaucoapi.domains.person.Person;
+import com.tarjetaucoapi.tarjetaucoapi.domains.purchase.Purchase;
 import com.tarjetaucoapi.tarjetaucoapi.util.IMessageSender;
 import com.tarjetaucoapi.tarjetaucoapi.util.gson.MapperJsonObjeto;
 import org.springframework.amqp.core.Message;
@@ -13,7 +14,7 @@ import org.springframework.stereotype.Component;
 
 import java.util.Optional;
 @Component
-public class MessageSenderBroker implements IMessageSender<Person> {
+public class MessageSenderBroker implements IMessageSender<Purchase> {
 
     private final RabbitTemplate rabbitTemplate;
     private final MapperJsonObjeto mapperJsonObjeto;
@@ -32,21 +33,18 @@ public class MessageSenderBroker implements IMessageSender<Person> {
                 .build();
     }
 
-    private Optional<Message> obtenerCuerpoMensaje(Object mensaje, MessageProperties propiedadesMensaje) {
+    private Optional<Message> obtenerCuerpoMensaje(Object mensaje) {
         Optional<String> textoMensaje = mapperJsonObjeto.ejecutarGson(mensaje);
 
         return textoMensaje.map(msg -> MessageBuilder
                 .withBody(msg.getBytes())
-                .andProperties(propiedadesMensaje)
                 .build());
 
     }
 
     @Override
-    public void execute(Person message, String idMessage) {
-        MessageProperties propiedadesMensaje = generarPropiedadesMensaje(idMessage);
-
-        Optional<Message> cuerpoMensaje = obtenerCuerpoMensaje(message, propiedadesMensaje);
+    public void execute(Purchase message) {
+        Optional<Message> cuerpoMensaje = obtenerCuerpoMensaje(message);
         if (!cuerpoMensaje.isPresent()) {
             return;
         }
