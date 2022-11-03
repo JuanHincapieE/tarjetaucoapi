@@ -12,7 +12,6 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/v1/rest")
 public class ProductController {
-
     @Autowired
     private IProductService productService;
 
