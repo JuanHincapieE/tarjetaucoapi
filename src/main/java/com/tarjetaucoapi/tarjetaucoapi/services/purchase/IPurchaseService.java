@@ -1,6 +1,6 @@
 package com.tarjetaucoapi.tarjetaucoapi.services.purchase;
 
-import com.tarjetaucoapi.tarjetaucoapi.domains.product.Product;
+
 import com.tarjetaucoapi.tarjetaucoapi.domains.purchase.Purchase;
 
 
